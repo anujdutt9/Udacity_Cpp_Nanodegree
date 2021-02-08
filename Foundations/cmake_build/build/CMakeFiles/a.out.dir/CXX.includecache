@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/anujdutt/Downloads/Development/C++ Programming/cmake_build/src/increment_and_sum.hpp
+stdio.h
+-
+vector
+-
+
+/Users/anujdutt/Downloads/Development/C++ Programming/cmake_build/src/main.cpp
+iostream
+-
+increment_and_sum.hpp
+/Users/anujdutt/Downloads/Development/C++ Programming/cmake_build/src/increment_and_sum.hpp
+
