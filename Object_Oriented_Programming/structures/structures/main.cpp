@@ -15,40 +15,16 @@ class Date {
 public:
     // Constructor
     Date(int d, int m, int y);
+
+    // Getters or Accessor functions
+    int GetDay() const { return day; }
+    int GetMonth() const { return month; }
+    int GetYear() const { return year; }
     
-    // Setter
-    void SetDay(int d){
-        if (d >= 1 && d <= 31){
-            day = d;
-        }
-    }
-    
-    // Getter
-    int GetDay(){
-        return day;
-    }
-    
-    // Setter
-    void SetMonth(int m){
-        if (m >= 1 && m <= 12){
-            month = m;
-        }
-    }
-    
-    // Getter
-    int GetMonth(){
-        return month;
-    }
-    
-    void SetYear(int y){
-        if (y > 1){
-            year = y;
-        }
-    }
-    
-    int GetYear(){
-        return year;
-    }
+    // Setter or Mutator functions
+    void SetDay(int d);
+    void SetMonth(int m);
+    void SetYear(int y);
 
 // Access Modifier
 private:
@@ -58,25 +34,44 @@ private:
     int year{0};
 };
 
+
 // Scope Resolution
 // :: -> Scope Resolution operator
 // use this operator to specify which namespace or class
 // to search in order to resolve an identifier.
-Date::Date(int d, int m, int y){
+
+// setting the values of private variables directly using this function
+// Date::Date(int d, int m, int y) : day(d), month(m), year(y) {}
+
+Date::Date(int d, int m, int y) {
     SetDay(d);
     SetMonth(m);
     SetYear(y);
 }
 
+// Setter Function Declaration
+void Date::SetDay(int d){
+    if (d >= 1 && d <= 31){
+        day = d;
+    }
+}
+
+void Date::SetMonth(int m){
+    if (m >= 1 && m <= 12){
+        month = m;
+    }
+}
+
+void Date::SetYear(int y){
+    year = y;
+}
+
+
 int main(int argc, const char * argv[]) {
     // instantiate structure by providing values
     // that go to a constructor
     Date date(29, 8, 2021);
-    
-    // define date
-    // date.SetDay(29);
-    // date.SetMonth(8);
-    // date.SetYear(2021);
+
     
     // Assert for date
     assert(date.GetDay() == 29);
